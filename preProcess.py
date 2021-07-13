@@ -241,7 +241,7 @@ class Preprocess:
 
 
 if __name__ == '__main__':
-    url = 'jdbc:postgresql://localhost:5432/option_db'
+    # url = 'jdbc:postgresql://localhost:5432/option_db'
     properties = {"user" : os.environ.get("username"), "password" : os.environ.get("pass"), "driver" : "org.postgresql.Driver"}
     spark = SparkSession.builder.master('local[*]').appName('Trading Option Mining').option('spark.jars', 'postgresql-42.2.22').getOrCreate()
     sparkInstance = Preprocess('data.csv', 'DIVRATE.csv', 'RF_RATE.csv')
